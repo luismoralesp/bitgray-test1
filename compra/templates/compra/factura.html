@@ -1,0 +1,43 @@
+<style type="text/css">
+	#total{
+		text-align: right;
+	}
+</style>
+<table>
+	<thead>
+		<tr>
+			<th colspan="2" width="50%">
+				<input type="search" ng-model="documento" placeholder="Documento:">
+			</th>
+			<th colspan="2">
+				[[cliente]]
+			</th>
+		</tr>
+		<tr>
+			<th>id produtos</th>
+			<th>Productos producto</th>
+			<th>sede</th>
+			<th>precio</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="f in facturas">
+			<td>[[f.producto.id]]</td>
+			<td>[[f.producto.producto]]</td>
+			<td>[[f.sede.sede]]</td>
+			<td>$[[f.precio]]</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th id="total" colspan="3">
+				Total precio:
+			</th>
+			<td>$[[total_precio]]</td>
+		</tr>
+	</tfoot>
+</table>
+<div class="tool">
+	<button class="active" ng-click="buscar()">Buscar</button>
+	<button ng-click="imprimir()">Imprimir</button>
+</div>

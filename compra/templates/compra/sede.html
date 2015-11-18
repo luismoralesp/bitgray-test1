@@ -1,0 +1,51 @@
+<form>
+	<h3>Sede [[_id]]</h3>
+	<p>
+		<label>Sede:</label>
+		<input ng-model="obj.sede">
+	</p>
+	<p>
+		<label>Dirección:</label>
+		<textarea ng-model="obj.direccion"></textarea>
+	</p>
+	<div class="tool">
+		<button ng-click="crear()">Nuevo</button>
+		<button ng-click="action()" class="active">[[action_name]]</button>
+		<button ng-click="clear()">Limpiar</button>
+	</div>
+</form>
+<h3>Lista de sedes</h3>
+<div class="tool">
+	<button ng-click="borrar()">Eliminar</button>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th width="10%">
+				<input type="checkbox" ng-click="ckeck_delete_all()" value="1">
+			</th>
+			<th>Sede</th>
+			<th>Dirección</th>
+			<th width="10%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in data.results">
+			<td>
+				<input type="checkbox" ng-click="ckeck_delete()" value="[[p.id]]">
+			</td>
+			<td>[[p.sede]]</td>
+			<td>[[p.direccion]]</td>
+			<td>
+				<button ng-click="editar(p)">Editar</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	Mostrando [[data.results.length]] de [[data.count]] 
+</p>
+<div class="tool">
+	<button ng-click="prev()">Anterior</button>
+	<button ng-click="next()">Siguiente</button>	
+</div>

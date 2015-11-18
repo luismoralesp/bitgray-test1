@@ -1,0 +1,49 @@
+<style type="text/css">
+	table{
+		border: solid 1px #000;
+		font-size:13px;
+	}
+	td, th{
+		padding: 5px;
+		text-align: center;
+	}
+	#total{
+		text-align: right;
+	}
+</style>
+<table>
+	<thead>
+		<tr>
+			<th colspan="2" width="50%">
+				{{documento}}
+			</th>
+			<th colspan="2">
+				{{cliente}}
+			</th>
+		</tr>
+		<tr>
+			<th>id produtos</th>
+			<th>Productos producto</th>
+			<th>sede</th>
+			<th>precio</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for f in facturas %}
+		<tr>
+			<td>{{f.producto_id}}</td>
+			<td>{{f.producto_producto}}</td>
+			<td>{{f.sede_sede}}</td>
+			<td>${{f.calc_precio}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<th id="total" colspan="3">
+				Total precio:
+			</th>
+			<td>${{total_precio}}</td>
+		</tr>
+	</tfoot>
+</table>

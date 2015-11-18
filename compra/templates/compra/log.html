@@ -1,0 +1,29 @@
+<h3>Logs</h3>
+<table>
+	<thead>
+		<tr>
+			<th width="10%">
+				<input type="checkbox" ng-click="ckeck_delete_all()" value="1">
+			</th>
+			<th>Fecha</th>
+			<th>Descripción</th>
+			<th width="10%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in data.results">
+			<td>
+				<input type="checkbox" ng-click="ckeck_delete()" value="[[p.id]]">
+			</td>
+			<td>[[p.fecha]]</td>
+			<td>[[p.descripcion]]</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	Mostrando [[data.results.length]] de [[data.count]] 
+</p>
+<div class="tool">
+	<button ng-click="prev()">Anterior</button>
+	<button ng-click="next()">Siguiente</button>	
+</div>

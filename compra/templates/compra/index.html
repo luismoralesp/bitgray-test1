@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html5>
+<html>
+  <head>
+  	<script src="{% static 'compra/js/angular/angular.js' %}"></script>
+  	<script src="{% static 'compra/js/angular/angular-route.js' %}"></script>
+  	<script src="{% static 'compra/js/controllers.js' %}"></script>
+  	<script src="{% static 'compra/js/compra.js' %}"></script>
+  	<script src="{% static 'compra/js/router.js' %}"></script>
+
+  	<link rel="stylesheet" type="text/css" href="{% static 'compra/css/compra.css' %}">
+  	<title>Bitgray</title>	
+  </head>
+  <body ng-app="compra_app">
+	<header>
+		<hgroup>
+			<h1>Bitgray compras</h1>
+		</hgroup>
+	</header>
+	<nav>
+		<ul>
+			<li>
+				<a href="#/factura/">Factura</a>
+			</li>
+			<li>
+				<a href="#/producto/">Producto</a>
+			</li>
+			<li>
+				<a href="#/cliente/">Cliente</a>
+			</li>
+			<li>
+				<a href="#/sede/">Sede</a>
+			</li>
+			<li>
+				<a href="#/compra/">Compra</a>
+			</li>
+			<li>
+				<a href="#/log/">Log</a>
+			</li>
+		</ul>
+	</nav>
+	<section>
+		<div ng-view></div>  
+	</section>
+	<footer>
+		
+	</footer>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<form>
+	<h3>Compra [[_id]]</h3>
+	<p>
+		<label>Cliente:</label>
+		<select ng-model="obj.cliente">
+			<option ng-repeat="c in clientes" value="[[c.id]]" ng-selected="obj.cliente==c.id">
+				[[c.nombres]]
+			</option>
+		</select>
+	</p>
+	<p>
+		<label>Producto:</label>
+		<select ng-model="obj.producto">
+			<option ng-repeat="c in productos" value="[[c.id]]" ng-selected="obj.producto==c.id">
+				[[c.producto]] - $[[c.precio]]
+			</option>
+		</select>
+	</p>
+	<p>
+		<label>Sede:</label>
+		<select ng-model="obj.sede">
+			<option ng-repeat="c in sedes" value="[[c.id]]" ng-selected="obj.sede==c.id">
+				[[c.sede]]
+			</option>
+		</select>
+	</p>
+	<p>
+		<label>Precio:</label>
+		<input ng-model="obj.precio">
+	</p>
+	<div class="tool">
+		<button ng-click="crear()">Nuevo</button>
+		<button ng-click="action()" class="active">[[action_name]]</button>
+		<button ng-click="clear()">Limpiar</button>
+	</div>
+</form>
+<h3>Lista de productos</h3>
+<div class="tool">
+	<button ng-click="borrar()">Eliminar</button>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th width="10%">
+				<input type="checkbox" ng-click="ckeck_delete_all()" value="1">
+			</th>
+			<th>Cliente</th>
+			<th>Producto</th>
+			<th>Precio</th>
+			<th width="10%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in data.results">
+			<td>
+				<input type="checkbox" ng-click="ckeck_delete()" value="[[p.id]]">
+			</td>
+			<td>[[p.cliente_nombres]]</td>
+			<td>[[p.producto_producto]]</td>
+			<td>$[[p.precio]]</td>
+			<td>
+				<button ng-click="editar(p)">Editar</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	Mostrando [[data.results.length]] de [[data.count]] 
+</p>
+<div class="tool">
+	<button ng-click="prev()">Anterior</button>
+	<button ng-click="next()">Siguiente</button>	
+</div>

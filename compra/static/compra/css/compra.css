@@ -1,0 +1,151 @@
+/**
+ * 
+ **/
+
+@font-face {
+    font-family: 'roboto'; /*a name to be used later*/
+    src: url('/static/compra/fonts/RobotoDraftRegular.woff2'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'icons'; /*a name to be used later*/
+    src: url('/static/compra/fonts/Material-Design-Icons.woff'); /*URL to font*/
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	background-color: #eee;
+	}
+	header {
+    height: 150px;
+    vertical-align: bottom;
+    width: 100%;
+    background-color: #009587;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+    position: relative;
+    z-index: 2;
+}
+
+h1, h2, h3{
+	font-family: 'roboto';
+	font-weight: 100;
+	color: rgb(82, 101, 162);
+}
+
+h1 {
+
+	color: #efefef;
+	padding: 40px;
+}
+
+nav{
+	float: left;
+	overflow-y: scroll;
+	height: calc(100% - 150px);
+	
+}
+
+nav ul{
+	list-style: none;
+	width: 250px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 10px;
+}
+
+nav ul li{
+	margin: 0px;
+	padding: 0px;
+}
+
+nav a{
+	text-decoration: none;
+	font-family: 'roboto';
+	font-size: 15px;
+	color: #111;
+	padding: 20px 30px;
+	display: block;
+}
+
+nav a:hover{
+	background-color: #ddd;
+}
+
+section{
+	float: left;
+	padding: 20px;
+	width: calc(100% - 340px);
+	height: calc(100% - 230px);
+	overflow: auto;
+}
+
+div[ng-view]{
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+	padding: 20px;
+	background-color: #fff;
+	width: calc(100% - 30px);
+}
+
+button{
+	text-transform: uppercase;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    padding: 9px 20px;
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:focus{
+
+}
+
+button.active{
+	background-color: #009587;
+	border: solid 1px #009587;
+	color: #efefef;
+}
+
+input, textarea , select{
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px;
+    border-bottom-color: #eef;
+    outline: none;
+    transition: border-bottom-color 0.20s ease-in-out;
+    margin-bottom: 1px;
+}
+
+input:focus, textarea:focus, select:focus{
+	box-shadow: none;
+    border-bottom: solid 2px;
+    border-bottom-color: #aaf;
+	margin-bottom: 0px;
+}
+
+textarea {
+	height: 50px;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 1px;
+}
+
+table td{
+	border-bottom: solid 1px #ddd;
+	border-top: solid 1px #ddd;
+}
+
+table tbody tr:hover{
+	background-color: #eee;
+}
+
+div.tool{
+	text-align: right;
+}
